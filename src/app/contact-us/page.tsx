@@ -66,7 +66,7 @@ const ContactUs = () => {
   };
 
   return (
-    <main className="min-h-dvh w-full bg-[#010101] px-20 py-6 md:px-8">
+    <main className="min-h-dvh w-full px-20 py-6 md:px-8">
       <h1 className="mb-10 text-center text-[82px] font-extrabold text-white sm:text-[24px]">
         Get in <span className="text-[#1A81F3]">touch</span>
       </h1>

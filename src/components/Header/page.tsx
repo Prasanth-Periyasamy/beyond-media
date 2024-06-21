@@ -1,26 +1,44 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { CloseIcon, HamBurgerMenu, Logo } from '@/utils/imageConstants';
+
+const navLinks = [
+  { id: 1, name: 'Home', path: '/' },
+  { id: 2, name: 'Products', path: '/products' },
+  { id: 3, name: 'About Us', path: '/about-us' },
+];
 
 export const Header = () => {
   const [menuState, setMenuState] = useState(false);
   const handleClick = () => {
     setMenuState(!menuState);
   };
+
+  const pathname = usePathname();
   return (
     <header>
       <nav className="mx-10 flex justify-between rounded-b-3xl bg-tertiary py-4 pl-5 pr-10 shadow-header-blue md:pr-6 sm:mx-0">
         <div>
-          <Image className="w-48 sm:w-14" src={Logo} alt="logo" />
+          <Link href="/">
+            <Image className="w-48 sm:w-14" src={Logo} alt="logo" />
+          </Link>
         </div>
         <div className="flex items-center justify-center gap-14 md:gap-10 sm:hidden">
           <ul className="flex gap-10 text-2xl font-bold *:text-primary md:gap-5 md:text-base">
-            <li>Home</li>
-            <li>Products</li>
-            <li>About Us</li>
+            {navLinks?.map((link) => (
+              <li key={link?.id}>
+                <Link className={pathname === link?.path ? `border-b-2 border-primary` : ''} href={link?.path}>
+                  {link?.name}
+                </Link>
+              </li>
+            ))}
           </ul>
-          <button className="rounded-3xl bg-primary px-10 py-2 text-base font-bold text-white">Contact Us</button>
+          <Link href="/contact-us">
+            <button className="rounded-3xl bg-primary px-10 py-2 text-base font-bold text-white">Contact Us</button>
+          </Link>
         </div>
         <div className="hidden sm:block">
           <Image className="w-4 cursor-pointer" onClick={handleClick} src={HamBurgerMenu} alt="menu-icon" />
@@ -32,11 +50,20 @@ export const Header = () => {
             </span>
             <div className="flex flex-col items-center justify-center gap-8">
               <ul className="flex flex-col items-center gap-y-5">
-                <li>Home</li>
-                <li>Products</li>
-                <li>About Us</li>
+                {navLinks?.map((link) => (
+                  <li key={link?.id} onClick={handleClick}>
+                    <Link
+                      className={pathname === link?.path ? `border-b-2 border-primary text-primary` : ''}
+                      href={link?.path}
+                    >
+                      {link?.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
-              <button className="rounded-3xl bg-primary px-8 py-1 text-base font-bold text-white">Contact Us</button>
+              <Link href="/contact-us">
+                <button className="rounded-3xl bg-primary px-8 py-1 text-base font-bold text-white">Contact Us</button>
+              </Link>
             </div>
           </div>
         </div>

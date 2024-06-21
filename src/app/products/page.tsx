@@ -3,10 +3,10 @@ import { ChatAssistant, SearchAssistant } from '@/utils/imageConstants';
 
 const Products = () => {
   return (
-    <main className="min-h-dvh bg-[#010101] px-14 text-white">
+    <main className="min-h-dvh px-14 py-10">
       <section className="enterprise-section flex items-center justify-between lg:flex-wrap">
         <div className="w-[50%] lg:w-full">
-          <h1 className="mb-5 text-[40px] font-extrabold text-[#1A81F3] lg:text-center lg:text-[20px]">
+          <h1 className="mb-5 text-[40px] font-extrabold text-primary lg:text-center lg:text-[20px]">
             Enterprise Search Assistant
           </h1>
           <div className="w-[50%] 3xl:hidden lg:block lg:w-full">
@@ -44,7 +44,7 @@ const Products = () => {
         </div>
       </section>
       <section className="chat-assistant mt-8 flex items-center justify-between gap-10 lg:flex-wrap">
-        <h1 className="mb-5 w-full text-center text-[40px] font-extrabold text-[#1A81F3] 3xl:hidden lg:block md:text-[20px]">
+        <h1 className="mb-5 w-full text-center text-[40px] font-extrabold text-primary 3xl:hidden lg:block md:text-[20px]">
           Enterprise Chat Assistant
         </h1>
         <div className="w-[50%] lg:w-full">

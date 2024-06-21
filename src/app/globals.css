@@ -35,32 +35,20 @@ h3 {
 p {
   font-size: 24px;
 }
-
-.blue-glow {
-  position: absolute;
-  transform: translateY(50%);
-  width: 400px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(26, 129, 243, 0.6) 0%, rgba(26, 129, 243, 0) 60%);
+input,
+textarea {
+  border: 1px solid #ffffff33;
+  border-radius: 5px;
+  background-color: #ffffff0d;
+  color: white;
+  outline: none;
+  padding: 12px 14px;
+  resize: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input::placeholder,
+textarea::placeholder {
+  color: #ffffff99;
+  /* background-color: aqua; */
 }
 
 @media only screen and (max-width: 640px) {
@@ -74,11 +62,26 @@ body {
     font-size: 12px;
   }
 }
+@media only screen and (max-width: 900px) {
+  .warpper {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
 /* Remove spinner buttons on IE */
 input[type='number'] {
   -ms-appearance: textfield;
 }
-
 .error {
   font-size: 12px !important;
   position: absolute;
