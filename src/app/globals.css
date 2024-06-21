@@ -1,33 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
+/* Global color variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary: #1a81f3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: var(--font-nunitoSans);
+  color: var(--text-color); */
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* Ensure images fill their containers */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+input,
+textarea {
+  border: 1px solid #ffffff33;
+  border-radius: 5px;
+  background-color: #ffffff0d;
+  color: white;
+  outline: none;
+  padding: 12px 14px;
+  resize: none;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #ffffff99;
+  /* background-color: aqua; */
+}
+
+@media only screen and (max-width: 900px) {
+  .warpper {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Remove spinner buttons on IE */
+input[type='number'] {
+  -ms-appearance: textfield;
+}
+
+.error {
+  font-size: 12px !important;
+  position: absolute;
+  text-align: left;
 }
