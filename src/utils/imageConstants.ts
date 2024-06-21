@@ -1,4 +1,15 @@
 export { default as contactUs } from '../assets/contact-us.svg';
-export { default as Logo } from '../assets/Beyond Media Logo.svg';
 export { default as SearchAssistant } from '../assets/search-assitant.svg';
 export { default as ChatAssistant } from '../assets/chat-assistant.svg';
+export { default as BigQueryImg } from '../assets/big-query.svg';
+export { default as ChatImage } from '../assets/exterprise-chat.svg';
+export { default as CustomSoftImage } from '../assets/software-dev.svg';
+export { default as CustomAImage } from '../assets/custom-ui-a.svg';
+export { default as CustomBImage } from '../assets/custom-ui-b.svg';
+export { default as CustomCImage } from '../assets/custom-ui-c.svg';
+export { default as Logo } from '../assets/beyond-media-logo.svg';
+export { default as ServiceImage } from '../assets/service-media.svg';
+export { default as CloseIcon } from '../assets/close-icon.svg';
+export { default as HamBurgerMenu } from '../assets/hamburger-icon.png';
+export { default as SearchAssistImage } from '../assets/search-assist.svg';
+export { default as AiImage } from '../assets/generative-ai.svg';

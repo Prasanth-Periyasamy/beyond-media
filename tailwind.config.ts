@@ -19,9 +19,25 @@ const config: Config = {
       xs: { max: '480px' },
     },
     extend: {
+      boxShadow: {
+        "header-blue": "0px 4px 23.5px 0px rgba(26, 129, 243, 1)",
+        "custom-blue": "0px 4px 40px 0px rgba(26, 129, 243, 0.5)",
+      },
+      order: {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        // Add more if needed
+      },
+      colors: {
+        primary: "var(--crayola)",
+        secondary: "#FFFFFF33",
+        tertiary: "var(--header-bg)",
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "custom-gradient":
+          "linear-gradient(186.01deg, #1A81F3 -13.79%, #000000 98%)",
       },
     },
   },

@@ -4,16 +4,16 @@
 
 /* Global color variables */
 :root {
-  --primary: #1a81f3;
+  --crayola: #1a81f3;
+  --text-color: #fef7f7;
+  --header-bg: #2d2d2d7a;
 }
-
-/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: var(--font-nunitoSans);
-  color: var(--text-color); */
+  font-family: var(--font-proximaNova);
+  color: var(--text-color);
 }
 ul,
 ol {
@@ -22,48 +22,58 @@ ol {
 a {
   text-decoration: none;
 }
-
-/* Ensure images fill their containers */
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-input,
-textarea {
-  border: 1px solid #ffffff33;
-  border-radius: 5px;
-  background-color: #ffffff0d;
-  color: white;
-  outline: none;
-  padding: 12px 14px;
-  resize: none;
-}
-input::placeholder,
-textarea::placeholder {
-  color: #ffffff99;
-  /* background-color: aqua; */
+body {
+  background: white;
 }
 
-@media only screen and (max-width: 900px) {
-  .warpper {
-    flex-wrap: wrap-reverse;
-    justify-content: center;
+h1 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
+p {
+  font-size: 24px;
+}
+
+.blue-glow {
+  position: absolute;
+  transform: translateY(50%);
+  width: 400px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 129, 243, 0.6) 0%, rgba(26, 129, 243, 0) 60%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
-/* Chrome, Safari, Edge, Opera */
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
-/* Firefox */
-input[type='number'] {
-  -moz-appearance: textfield;
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+  }
 }
-
 /* Remove spinner buttons on IE */
 input[type='number'] {
   -ms-appearance: textfield;
