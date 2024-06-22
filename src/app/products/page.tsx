@@ -3,7 +3,7 @@ import { ChatAssistant, SearchAssistant } from '@/utils/imageConstants';
 
 const Products = () => {
   return (
-    <main className="min-h-dvh px-14 py-10">
+    <main className="min-h-dvh px-14 pb-10 pt-28 sm:p-6">
       <section className="enterprise-section flex items-center justify-between lg:flex-wrap">
         <div className="w-[50%] lg:w-full">
           <h1 className="mb-5 text-[40px] font-extrabold text-primary lg:text-center lg:text-[20px]">
@@ -19,7 +19,6 @@ const Products = () => {
               effortless searches on websites, documents, database tables, and seamlessly integrates with your companys
               intranet,
             </h4>
-            <h4 className="mb-5 text-[25px] font-bold lg:text-center md:text-[16px]">Slack, or Jira/Confluence.</h4>
             <h4 className="mb-5 text-[25px] font-bold lg:text-center md:text-[16px]">Slack, or Jira/Confluence.</h4>
             <h4 className="text-[25px] font-bold lg:text-center md:text-[16px]">
               Our primary objective is to leverage advanced Large language model processing techniques to retrieve
