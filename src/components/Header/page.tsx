@@ -23,7 +23,7 @@ export const Header = () => {
       <nav className="mx-10 flex justify-between rounded-b-3xl bg-tertiary py-4 pl-5 pr-10 shadow-header-blue md:pr-6 sm:mx-0">
         <div>
           <Link href="/">
-            <Image className="w-48 sm:w-14" src={Logo} alt="logo" />
+            <Image className="w-48 sm:w-28" src={Logo} alt="logo" />
           </Link>
         </div>
         <div className="flex items-center justify-center gap-14 md:gap-10 sm:hidden">
@@ -41,7 +41,7 @@ export const Header = () => {
           </Link>
         </div>
         <div className="hidden sm:block">
-          <Image className="w-4 cursor-pointer" onClick={handleClick} src={HamBurgerMenu} alt="menu-icon" />
+          <Image className="w-5 cursor-pointer" onClick={handleClick} src={HamBurgerMenu} alt="menu-icon" />
           <div
             className={`fixed top-0 ${menuState ? 'right-[0%]' : 'right-[-50%]'} z-10 h-full w-[50%] bg-black text-white opacity-95 duration-300 ease-linear`}
           >
@@ -62,7 +62,12 @@ export const Header = () => {
                 ))}
               </ul>
               <Link href="/contact-us">
-                <button className="rounded-3xl bg-primary px-8 py-1 text-base font-bold text-white">Contact Us</button>
+                <button
+                  className="rounded-3xl bg-primary px-8 py-1 text-base font-bold text-white"
+                  onClick={handleClick}
+                >
+                  Contact Us
+                </button>
               </Link>
             </div>
           </div>

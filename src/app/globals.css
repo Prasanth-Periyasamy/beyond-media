@@ -23,17 +23,14 @@ a {
   text-decoration: none;
 }
 body {
-  background: white;
+  background: black;
 }
 
 h1 {
   font-size: 40px;
 }
-h3 {
-  font-size: 30px;
-}
 p {
-  font-size: 24px;
+  font-size: 20px;
 }
 input,
 textarea {
@@ -55,11 +52,8 @@ textarea::placeholder {
   h1 {
     font-size: 20px;
   }
-  h3 {
-    font-size: 16px;
-  }
   p {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 @media only screen and (max-width: 900px) {
