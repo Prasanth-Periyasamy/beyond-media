@@ -27,7 +27,7 @@ export default function Home() {
             your specific requirements.
           </p>
           <Link href="/products/#search-assistant">
-            <button className="rounded bg-white px-8 py-4 text-lg font-bold text-primary sm:hidden">
+            <button className="mt-2.5 rounded bg-white px-8 py-4 text-lg font-bold text-primary sm:hidden">
               See how it works
             </button>
           </Link>
@@ -51,7 +51,7 @@ export default function Home() {
           <h1 className="font-extrabold text-primary">Enterprise Chat Assistant</h1>
           <p className="ml-auto w-[350px] font-bold sm:w-full">Your Assistant at work, powered by Gen AI...</p>
           <Link href="/products/#chat-assistants">
-            <button className="rounded bg-white px-8 py-3 text-lg font-bold text-primary sm:hidden">
+            <button className="mt-2.5 rounded bg-white px-8 py-3 text-lg font-bold text-primary sm:hidden">
               See how it works
             </button>
           </Link>
