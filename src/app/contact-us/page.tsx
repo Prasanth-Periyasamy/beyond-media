@@ -12,26 +12,31 @@ const schema = z.object({
     .string()
     .min(2, { message: 'Last name must be atleast 2 chars' })
     .max(50, { message: 'Last name must be less than 50 chars' })
-    .regex(/^[A-Za-z]+$/, { message: 'Last name must only contain letters' }),
+    .regex(/^[A-Za-z]+$/, { message: 'Last name must only contain letters' })
+    .optional()
+    .or(z.literal('')),
   firstName: z
     .string()
-    // .({ message: 'First name is required' })
+    .nonempty({ message: 'First name is required' })
     .min(2, { message: 'First name must be atleast 2 chars' })
     .max(50, { message: 'First name must be less than 50 chars' })
     .regex(/^[A-Za-z]+$/, { message: 'First name must only contain letters' }),
   email: z
     .string()
-    // .nonempty({ message: 'Email is required' })
+    .nonempty({ message: 'Email is required' })
     .email({ message: 'Email must be a valid email address' }),
   phoneNumber: z
     .string()
-    // .nonempty({ message: 'Phone number is required' })
-    .regex(/^\+?[1-9]\d{1,14}$/, { message: 'Phone number must be valid' }),
+    .length(10, { message: 'Phone number must be exactly 10 digits' })
+    .regex(/^\+?[1-9]\d{1,14}$/, { message: 'Phone number must be valid' })
+    .optional()
+    .or(z.literal('')),
   message: z
     .string()
-    // .nonempty({ message: 'Message is required' })
     .min(10, { message: 'Message must be at least 10 chars' })
-    .max(500, { message: 'Message must be less than 500 chars' }),
+    .max(500, { message: 'Message must be less than 500 chars' })
+    .optional()
+    .or(z.literal('')),
 });
 
 type FormFields = z.infer<typeof schema>;
