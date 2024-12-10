@@ -10,7 +10,7 @@ import { contactUs } from '@/utils/imageConstants';
 const schema = z.object({
   lastName: z
     .string()
-    .min(2, { message: 'Last name must be atleast 2 chars' })
+    .min(1, { message: 'Last name must be atleast 1 chars' })
     .max(50, { message: 'Last name must be less than 50 chars' })
     .regex(/^[A-Za-z]+$/, { message: 'Last name must only contain letters' })
     .optional()
@@ -45,7 +45,6 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    setError,
     reset,
     trigger,
     formState: { errors, isSubmitting },
@@ -56,13 +55,43 @@ const ContactUs = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormFields> = async () => {
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    const apiUrl = process.env.NEXT_PUBLIC_AWS_API_URL || '';
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY || '';
+
+    const adminEmailBody = {
+      subject: 'New Contact Us Form Submission',
+      htmlBody: `
+          <html>
+              <body>
+                  <h1>Contact Us Form Submission</h1>
+                  <p>First Name: ${data.firstName}</p>
+                  <p>Last Name: ${data.firstName}</p>
+                  <p>Email Address: ${data.email}</p>
+                  <p>Phone Number: ${data.phoneNumber}</p>
+                  <p>Message: ${data.message}</p>
+              </body>
+          </html>
+      `,
+    };
     try {
-      toast.success('Sent successfully');
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      reset();
+      const adminResponse = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+        },
+        body: JSON.stringify(adminEmailBody),
+      });
+      if (adminResponse.ok) {
+        toast.success('Form Submission Successful');
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        reset();
+      } else {
+        toast.error('Form Submission Failed');
+      }
     } catch (error) {
-      setError('root', { message: 'This email is already Taken' });
+      toast.error('Form Submission Failed');
     }
   };
 

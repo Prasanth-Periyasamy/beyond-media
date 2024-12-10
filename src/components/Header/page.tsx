@@ -7,8 +7,8 @@ import { CloseIcon, HamBurgerMenu, Logo } from '@/utils/imageConstants';
 
 const navLinks = [
   { id: 1, name: 'Home', path: '/' },
-  { id: 2, name: 'Products', path: '/products' },
-  { id: 3, name: 'About Us', path: '/about-us' },
+  { id: 2, name: 'Products', path: '/products/' },
+  { id: 3, name: 'About Us', path: '/about-us/' },
 ];
 
 export const Header = () => {
@@ -20,10 +20,10 @@ export const Header = () => {
   const pathname = usePathname();
   return (
     <header>
-      <nav className="mx-10 flex justify-between rounded-b-3xl bg-tertiary py-4 pl-5 pr-10 shadow-header-blue md:pr-6 sm:mx-0">
+      <nav className="mx-10 flex justify-between rounded-b-3xl bg-tertiary py-3 pl-5 pr-10 shadow-header-blue md:pr-6 sm:mx-0">
         <div>
           <Link href="/">
-            <Image className="w-48 sm:w-28" src={Logo} alt="logo" />
+            <Image className="h-20 w-48 object-cover sm:w-40" src={Logo} alt="logo" />
           </Link>
         </div>
         <div className="flex items-center justify-center gap-14 md:gap-10 sm:hidden">

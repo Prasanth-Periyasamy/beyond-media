@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="grid h-72 items-end justify-end rounded-t-3xl bg-gradient-to-b from-primary to-black md:h-56 sm:h-32 sm:rounded-t-[50px]">
         <div className="flex flex-col items-center p-14 sm:p-4">
           <div>
-            <Image className="w-48 sm:w-20" src={Logo} alt="logo" />
+            <Image className="h-20 w-48 object-cover sm:w-28" src={Logo} alt="logo" />
           </div>
           <div>
             <p className="text-[14px] sm:text-[5px]">© Copy Right 2024.</p>
